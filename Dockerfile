@@ -1,5 +1,13 @@
 FROM openjdk:8-jre
 
+ARG activemq_ver=5.15.5
+ARG activemq_mirror=http://ba.mirror.garr.it/mirrors/apache/activemq
+
+ENV DEBIAN_FRONTEND noninteractive
+
+ENV ACTIVEMQ_VERSION=$activemq_ver
+ENV ACTIVEMQ_MIRROR=$activemq_mirror
+
 ENV ACTIVEMQ_CONFIG_DIR /opt/activemq/conf.tmp
 ENV ACTIVEMQ_DATA_DIR /data/activemq
 
