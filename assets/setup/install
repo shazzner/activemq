@@ -23,12 +23,9 @@ mkdir -p /var/log/activemq
 groupadd activemq
 useradd --system --home ${ACTIVEMQ_HOME} -g activemq activemq
 
-
 chown -R activemq:activemq ${ACTIVEMQ_HOME}
 chown -R activemq:activemq ${DATA_DIR}/activemq
 chown -R activemq:activemq ${LOG_DIR}/activemq
-
-
 
 # We setup logrotate for activemq
 cat > /etc/logrotate.d/activemq <<EOF
@@ -56,7 +53,6 @@ ${LOG_DIR}/supervisor/*.log {
   dateformat -%Y-%m-%d
 }
 EOF
-
 
 # configure supervisord to start crond
 cat > /etc/supervisor/conf.d/cron.conf <<EOF
