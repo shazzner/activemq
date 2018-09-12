@@ -22,7 +22,6 @@ COPY assets/setup/ /app/setup/
 RUN chmod +x /app/setup/install
 RUN /app/setup/install
 
-
 # Copy the app setting
 COPY assets/entrypoint /app/
 COPY assets/run.sh /app/run.sh
