@@ -2,7 +2,8 @@
 set -e
 
 
-ACTIVEMQ_VERSION="5.14.3"
+ACTIVEMQ_VERSION="5.15.5"
+ACTIVEMQ_MIRROR="http://ba.mirror.garr.it/mirrors/apache/activemq"
 ACTIVEMQ_HOME="/opt/activemq"
 SETUP_DIR="/app/setup"
 LOG_DIR="/var/log"
@@ -11,7 +12,7 @@ DATA_DIR="/data"
 # Start install
 mkdir -p ${ACTIVEMQ_HOME}
 cd /usr/src
-curl -LO http://apache.mirrors.ovh.net/ftp.apache.org/dist/activemq/${ACTIVEMQ_VERSION}/apache-activemq-${ACTIVEMQ_VERSION}-bin.tar.gz
+curl -O ${ACTIVEMQ_MIRROR}/${ACTIVEMQ_VERSION}/apache-activemq-${ACTIVEMQ_VERSION}-bin.tar.gz
 tar -xvzf apache-activemq-${ACTIVEMQ_VERSION}-bin.tar.gz
 mv apache-activemq-${ACTIVEMQ_VERSION}/* ${ACTIVEMQ_HOME}
 rm -rf /usr/src/*
