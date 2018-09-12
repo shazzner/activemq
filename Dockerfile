@@ -20,7 +20,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install setuptools to solve debian issue
-RUN pip install setuptools
+RUN pip install wheel setuptools
 
 # Install stompy
 RUN pip install stomp.py
