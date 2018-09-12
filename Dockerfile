@@ -11,6 +11,9 @@ RUN apt-get update && \
     dpkg-reconfigure locales && \
     rm -rf /var/lib/apt/lists/*
 
+# Install setuptools to solve debian issue
+RUN pip install setuptools
+
 # Install stompy
 RUN pip install stomp.py
 
